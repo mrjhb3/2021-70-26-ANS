@@ -1,0 +1,12 @@
+---
+- name: Playbook - delete cowsay    # metadata
+  hosts: planetexpress:!bender !farnsworth   # we want to take the planetexpress group and remove farnsworth
+  connection: ssh     # default is to use the connection plugin ssh.py
+  gather_facts: yes   # default is yes
+
+  tasks:                             # a list of what we want to do 
+  - name: using apt to delete cowsay  # metadata
+    apt:                     # the module we want to run, apt.py
+        name: cowsay        # parameter name has the value cowsay
+        state: absent       # parameter state has the value present
+    become: yes              # elevate status to admin, sudo, enable, etc.
