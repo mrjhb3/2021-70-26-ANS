@@ -1,0 +1,23 @@
+---
+- name: JHB3 first template
+  hosts: planetexpress
+  gather_facts: no   # runs the "setup" module on remote hosts
+
+  # these variables are used in the template jhb3.cfg.j2
+  vars:
+    Host1: Bender
+    IP1: 10.10.2.3
+    Host2: Fry
+    IP2: 10.10.2.4
+    Host3: Zoidberg
+    IP3: 10.10.2.5
+    Host4: Farnsworth
+    IP4: 10.10.2.6
+
+
+  tasks:
+    - name: Write host info - hopefully
+      template:  
+        src: templates/jhb3.cfg.easy.j2    # name of the template on ansible controller
+        dest: ~/jhb3_easy.cfg             # name of the completed file to be placed on the target system
+
