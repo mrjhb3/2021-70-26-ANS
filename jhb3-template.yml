@@ -13,7 +13,7 @@
     - Host: Zoidberg
       IP: 10.10.2.5
     - Host: Farnsworth
-      IP: 10.10.2.6
+       IP: 10.10.2.6
 
 
   tasks:
