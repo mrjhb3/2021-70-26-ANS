@@ -1,0 +1,22 @@
+---
+- name: Make sure packages are up to date. Trying to use a loop
+  package:
+    name: "{{ progs }}"
+    state: latest
+  become: True
+
+- name: Make sure Bastet is up to date. Trying to use a loop
+  package:
+    name: bastet
+    state: latest
+  become: True
+  when: ansible_distribution ==  "Ubuntu"
+
+- name: Add a log entry
+  lineinfile:
+    path: ~/loggy.log
+    line:  "{{ ansible_date_time.iso8601 }} - Passed Checkup"
+#    line:  "{{ ansible_date_time }} - Passed Checkup"
+#    line:  "{{ ansible_date_time.date }} - Passed Checkup"
+    create: True
+
