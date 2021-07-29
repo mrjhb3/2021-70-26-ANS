@@ -5,13 +5,6 @@
     state: latest
   become: True
 
-- name: Make sure Bastet is up to date. Trying to use a loop
-  package:
-    name: bastet
-    state: latest
-  become: True
-  when: ansible_distribution ==  "Ubuntu"
-
 - name: Add a log entry
   lineinfile:
     path: ~/loggy.log

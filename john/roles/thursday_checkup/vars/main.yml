@@ -1,7 +1,7 @@
 ---
- vars:   # vars available to all tasks
-    progs:
-      - "sl"
-      - "cowsay"
-      - "bastet"
+  progs:
+    - "sl"
+    - "cowsay"
+    - "figlet"
+#    - "bastet"
 
