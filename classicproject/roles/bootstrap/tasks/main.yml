@@ -1,2 +1,5 @@
 ---
 # tasks file for bootstrap
+- debug:
+    msg: Boostrapping for JHB3
+    # tasks file for bootstrap

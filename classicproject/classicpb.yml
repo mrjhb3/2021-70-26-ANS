@@ -1,6 +1,7 @@
 ---
 - name: New Hire Desktop
-  hosts: all
+#  hosts: all
+  hosts: planetexpress:research
   gather_facts: yes
 
   roles:
