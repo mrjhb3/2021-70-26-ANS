@@ -1,0 +1,65 @@
+---
+    - name: Check that steam locomotive on CentOS machines is current
+      yum:
+        name: sl
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "CentOS"
+
+    - name: Check that cowsay CentOS machines is current
+      yum:
+        name: cowsay
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "CentOS"
+
+    - name: Check that bastet on CentOS machines is current
+      yum:
+        name: bastet
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "CentOS"
+
+    - name: Check that figlet on CentOS machines is current
+      yum:
+        name: figlet
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "CentOS"
+
+    - name: Check that steam locomotive on Ubuntu machines
+      apt:
+        name: sl
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "Ubuntu"
+ 
+    - name: Check that cowsay on Ubuntu machines
+      apt:
+        name: cowsay
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Check that bastet on Ubuntu machines
+      apt:
+        name: bastet
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Check that figlet on Ubuntu machines
+      apt:
+        name: figlet
+        state: latest
+      become: yes # run as sudo
+      when: ansible_distribution == "Ubuntu"
+
+
+    - name: Add a log entry
+      lineinfile:
+        path: ~/loggy.log
+        line:  "{{ ansible_date_time.iso8601 }} - Passed Checkup"
+#        line:  "{{ ansible_date_time }} - Passed Checkup"
+#        line:  "{{ ansible_date_time.date }} - Passed Checkup"
+        create: True

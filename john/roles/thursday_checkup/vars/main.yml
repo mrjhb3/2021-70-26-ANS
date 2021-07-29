@@ -1,0 +1,7 @@
+---
+ vars:   # vars available to all tasks
+    progs:
+      - "sl"
+      - "cowsay"
+      - "bastet"
+
