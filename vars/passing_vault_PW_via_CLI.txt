@@ -1,0 +1,2 @@
+ansible-playbook playbook-vault03.yml --vault-id mypass@vars/vaultpass.txt
+
